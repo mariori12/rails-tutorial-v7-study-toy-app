@@ -13,11 +13,11 @@ gem 'puma',            '5.6.8'
 gem 'rails',           '7.0.4.3'
 gem 'sassc-rails',     '2.1.2'
 gem 'sprockets-rails', '3.4.2'
-gem 'sqlite3',         '1.6.1'
 gem 'stimulus-rails',  '1.2.1'
 gem 'turbo-rails',     '1.4.0'
 
 group :development, :test do
+  gem 'sqlite3', '1.6.1'
   gem 'debug', '1.7.1', platforms: %i[mri mingw x64_mingw]
   gem 'reline', '0.5.10'
 end
@@ -41,6 +41,10 @@ group :test do
   gem 'rubocop-rails'
   gem 'selenium-webdriver', '4.8.3'
   gem 'webdrivers', '5.2.0'
+end
+
+group :production do
+  gem 'pg', '>= 1.1', '< 2.0'
 end
 
 # Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要がある
